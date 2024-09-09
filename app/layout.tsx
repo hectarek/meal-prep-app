@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import { fontMono, fontSans } from "@/lib";
-import { ClerkProvider, SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import { ClerkProvider, SignedIn, SignedOut } from "@clerk/nextjs";
+import Navbar from "@/components/Navbar/Navbar";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -25,10 +26,14 @@ export default function RootLayout({
 			<html lang="en">
 				<body className={cn("w-full overflow-x-hidden h-svh font-sans antialiased", fontSans.variable, fontMono.variable)}>
 					<SignedOut>
-						<div className="flex h-screen min-h-screen flex-col items-center justify-between overflow-x-hidden">{children}</div>
+						<div className="flex h-screen min-h-screen flex-col items-center justify-between">{children}</div>
 					</SignedOut>
 					<SignedIn>
-						<div className="flex min-h-screen">{children}</div>
+						<div className="flex h-screen min-h-screen flex-col items-center">
+            <Navbar />
+
+							{children}
+						</div>
 					</SignedIn>
 				</body>
 			</html>
