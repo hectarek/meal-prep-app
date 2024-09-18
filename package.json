@@ -26,7 +26,7 @@
     "cmdk": "1.0.0",
     "lucide-react": "^0.439.0",
     "meal-prep-app": ".",
-    "next": "14.2.8",
+    "next": "14.2.10",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.53.0",
